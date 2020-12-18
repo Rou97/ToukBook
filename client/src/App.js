@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Axios from "axios";
-import Header from "./components/layout/Header";
-import Home from "./components/pages/Home";
-import Login from "./components/auth/Login";
-import Register from "./components/auth/Register";
+import Header from "./layout/Header";
+import Home from "./pages/Home";
+import Search from "./pages/Search";
+import SearchResults from "./pages/SearchResults";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
 import UserContext from "./context/UserContext";
 
 import "./style.css";
@@ -51,6 +53,8 @@ export default function App() {
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
+              <Route path="/search" component={Search} />
+              <Route path="/searchresults" component={SearchResults} />
             </Switch>
           </div>
         </UserContext.Provider>
