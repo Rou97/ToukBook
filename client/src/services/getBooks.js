@@ -8,12 +8,4 @@ export default async function getBooks(keyword, setInfo) {
         .then(data => {
             setInfo(data)
         })
-    // fetch(apiURL)
-    //     .then(res => res.json())
-    //     .then(response => {
-    //         console.log(response)
-    //         if (response !== undefined) {
-    //             return response
-    //         }
-    //     })
 } 

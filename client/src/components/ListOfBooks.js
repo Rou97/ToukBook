@@ -9,9 +9,6 @@ export default function ListOfBooks(props) {
             {items.map((element) => {
                 return <Book key={element.id} info={element}></Book>
             })}
-            {/* {items.forEach(element => {
-                return <Book key={element.id}></Book>
-            })} */}
         </div >
     )
 }

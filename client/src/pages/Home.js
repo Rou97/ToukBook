@@ -5,12 +5,6 @@ import UserContext from "../context/UserContext";
 export default function Home() {
   const { userData } = useContext(UserContext);
 
-  const a = () => {
-    fetch('https://www.googleapis.com/books/v1/volumes?q=harry%20potter')
-      .then(res => res.json())
-      .then(res => console.log(res))
-  }
-
   return (
     <div className="page">
       {userData.user ? (
