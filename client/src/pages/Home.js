@@ -11,6 +11,8 @@ export default function Home() {
         <div>
           <h1>Welcome {userData.user.displayName}</h1>
           <Link to="/search">Search</Link>
+          <Link to="/library">Library</Link>
+          <Link to="/match">Match</Link>
         </div>
       ) : (
           <button>

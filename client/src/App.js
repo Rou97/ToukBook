@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import UserContext from "./context/UserContext";
 import Axios from "axios";
 import Header from "./layout/Header";
+import Login from "./auth/Login";
+import Register from "./auth/Register";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import SearchResults from "./pages/SearchResults";
-import Login from "./auth/Login";
-import Register from "./auth/Register";
-import UserContext from "./context/UserContext";
+import Library from "./pages/Library";
+import Match from "./pages/Match";
 
 import "./style.css";
 
@@ -55,6 +57,8 @@ export default function App() {
               <Route path="/register" component={Register} />
               <Route path="/search" component={Search} />
               <Route path="/searchresults" component={SearchResults} />
+              <Route path="/library" component={Library} />
+              <Route path="/match" component={Match} />
             </Switch>
           </div>
         </UserContext.Provider>
