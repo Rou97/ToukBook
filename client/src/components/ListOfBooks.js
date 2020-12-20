@@ -9,13 +9,10 @@ export default function ListOfBooks(props) {
         items = props.info
     }
 
-    console.log(items)
-
     return (
         <div>
             List results component
             {items.map((element) => {
-                console.log(element)
                 return <Book key={element.id} info={element}></Book>
             })}
         </div >

@@ -5,7 +5,7 @@ import ListOfBooks from '../components/ListOfBooks';
 
 export default function Library() {
     const [info, setInfo] = useState();
-    //const { items } = props.info.data;
+
     const { userData } = useContext(UserContext);
     const { id } = userData.user;
 

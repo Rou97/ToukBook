@@ -5,7 +5,7 @@ export default async function getLibrary(id, setInfo) {
     const data = {
         id
     }
-    axios.post("http://localhost:5000/library/", data)
+    axios.post("http://localhost:5000/library/getlibrary", data)
         .then(res => {
             setInfo(res.data)
         })

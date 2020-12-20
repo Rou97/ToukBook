@@ -36,7 +36,6 @@ router.post("/removeBook", async (req, res) => {
         const { id, title, thumbnail } = req.body;
         const idUser = req.body.userData.user.id;
         const existingBook = await Library.findOneAndRemove({ userID: idUser, bookID: id });
-        console.log(existingBook)
 
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -44,11 +43,9 @@ router.post("/removeBook", async (req, res) => {
 });
 
 router.post("/isbooklibrary", async (req, res) => {
-    console.log('heyyyy')
     const { id } = req.body;
     const idUser = req.body.user;
     const existingBook = await Library.findOne({ userID: idUser, bookID: id });
-    console.log(existingBook)
     res.json(existingBook);
 });
 

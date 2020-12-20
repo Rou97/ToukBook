@@ -6,7 +6,7 @@ import isBookLibrary from "../services/isBookLibrary";
 
 export default function AddLibraryButton(props) {
     const { userData } = useContext(UserContext);
-    const [button, setButton] = useState()
+    const [button, setButton] = useState();
     const { id, title, thumbnail } = props;
 
     useEffect(() => {
