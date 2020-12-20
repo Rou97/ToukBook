@@ -4,25 +4,29 @@ const Library = require("../models/userLibrary");
 
 router.post("/addBook", async (req, res) => {
     try {
-        async function addToLibrary(idUser, idBook, title, thumbnail) {
+        async function addToLibrary(idUser, idBook, title, thumbnail, provincia) {
             let newBookInLibrary = {
                 userID: idUser,
                 bookID: idBook,
                 bookMood: true,
                 title,
-                thumbnail
+                thumbnail,
+                provincia
             }
             let saveInLibrary = await Library.create(newBookInLibrary);
         }
+
         console.log('hey')
         const { id, title, thumbnail } = req.body;
         const idUser = req.body.userData.user.id;
 
+        const user = await User.findOne({ _id: idUser });
+        console.log(user)
+
         const existingBook = await Library.findOne({ userID: idUser, bookID: id });
-        console.log('u ' + existingBook)
 
         if (existingBook === null) {
-            addToLibrary(idUser, id, title, thumbnail)
+            addToLibrary(idUser, id, title, thumbnail, user.provincia)
         }
 
     } catch (err) {

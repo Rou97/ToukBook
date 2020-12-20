@@ -9,6 +9,7 @@ export default function Register() {
   const [password, setPassword] = useState();
   const [passwordCheck, setPasswordCheck] = useState();
   const [displayName, setDisplayName] = useState();
+  const [provincia, setProvincia] = useState();
   const [error, setError] = useState();
 
   const { setUserData } = useContext(UserContext);
@@ -18,7 +19,7 @@ export default function Register() {
     e.preventDefault();
 
     try {
-      const newUser = { email, password, passwordCheck, displayName };
+      const newUser = { email, password, passwordCheck, displayName, provincia };
       await Axios.post("http://localhost:5000/users/register", newUser);
       const loginRes = await Axios.post("http://localhost:5000/users/login", {
         email,
@@ -67,6 +68,17 @@ export default function Register() {
           type="text"
           onChange={(e) => setDisplayName(e.target.value)}
         />
+
+        <input
+          list="provincias"
+          name="provincias"
+          onChange={(e) => setProvincia(e.target.value)}
+        />
+        <label>Provincias</label>
+        <datalist id="provincias">
+          <option value="Madrid" />
+          <option value="Barcelona" />
+        </datalist>
 
         <input type="submit" value="Register" />
       </form>

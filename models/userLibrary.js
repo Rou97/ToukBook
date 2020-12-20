@@ -19,6 +19,9 @@ const librarySchema = new mongoose.Schema({
     },
     thumbnail: {
         type: String
+    },
+    provincia: {
+        type: String
     }
 });
 
