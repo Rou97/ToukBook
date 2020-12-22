@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import ListOfMatches from '../components/ListOfMatches';
 
 export default function Match() {
     return (
         <div>
-            Match Page
+            Match Pages
+            <ListOfMatches></ListOfMatches>
         </div>
     )
 }
