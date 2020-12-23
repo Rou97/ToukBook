@@ -12,8 +12,8 @@ export default function ListOfBooks(props) {
     return (
         <div>
             List results component
-            {items.map((element) => {
-                return <Book key={element.id} info={element}></Book>
+            {items.map((element, index) => {
+                return <Book key={index} info={element}></Book>
             })}
         </div >
     )
