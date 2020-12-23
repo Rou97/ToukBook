@@ -23,7 +23,7 @@ export default function Book(props) {
 
     return (
 
-        <div>
+        <div >
             {id ? (<div>
                 {title}
                 {a ? (<ChangeMoodButton id={id}></ChangeMoodButton>) : (<></>)}

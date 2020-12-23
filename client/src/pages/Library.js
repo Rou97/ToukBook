@@ -5,13 +5,13 @@ import ListOfBooks from '../components/ListOfBooks';
 
 export default function Library() {
     const [info, setInfo] = useState();
-
     const { userData } = useContext(UserContext);
-    const { id } = userData.user;
 
     useEffect(() => {
-        getLibrary(id, setInfo)
-    }, [])
+        if (userData.user) {
+            getLibrary(userData.user.id, setInfo)
+        }
+    }, [userData.user])
 
     return (
         <div>

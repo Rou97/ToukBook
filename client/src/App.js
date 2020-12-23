@@ -10,6 +10,7 @@ import Search from "./pages/Search";
 import SearchResults from "./pages/SearchResults";
 import Library from "./pages/Library";
 import Match from "./pages/Match";
+import Profile from "./pages/Profile";
 
 import "./style.css";
 
@@ -59,6 +60,7 @@ export default function App() {
               <Route path="/searchresults" component={SearchResults} />
               <Route path="/library" component={Library} />
               <Route path="/match" component={Match} />
+              <Route path="/userprofile" component={Profile} />
             </Switch>
           </div>
         </UserContext.Provider>

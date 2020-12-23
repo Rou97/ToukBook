@@ -1,13 +1,12 @@
 import axios from 'axios';
 
-export default async function getMatches(id, setInfo) {
+export default async function getUser(id, setInfo) {
     //const { items } = props.info.data;
     const data = {
         id
     }
-    axios.post("http://localhost:5000/match/getmatches", data)
+    axios.post("http://localhost:5000/match/getuser", data)
         .then(res => {
-            //console.log(res)
             setInfo(res.data)
         })
 } 
