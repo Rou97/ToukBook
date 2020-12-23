@@ -10,7 +10,6 @@ export default function ChangeMoodButton(props) {
     const { id } = props;
 
     useEffect(() => {
-        console.log('a')
         moodState(id, userData.user.id, setMood)
         if (mood) {
             setButton('I have it')
@@ -20,7 +19,6 @@ export default function ChangeMoodButton(props) {
     }, [mood])
 
     const onclick = () => {
-        console.log('click')
         changeMoodState(id, userData.user.id, setMood, mood)
     }
 

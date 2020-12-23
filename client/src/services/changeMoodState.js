@@ -11,7 +11,6 @@ export default async function changeMoodState(bookID, userID, setMood, mood) {
 
     axios.post("http://localhost:5000/library/changemoodstate", data)
         .then(res => {
-            console.log(res.data)
             setMood(res.data)
         })
 } 

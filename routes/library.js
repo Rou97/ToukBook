@@ -5,6 +5,7 @@ router.post("/getlibrary", async (req, res) => {
     try {
         const { id } = req.body;
         const library = await Library.find({ userID: id });
+        console.log(library)
         res.json(library);
 
     } catch (err) {

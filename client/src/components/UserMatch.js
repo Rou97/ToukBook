@@ -9,7 +9,6 @@ export default function UserMatch(props) {
     }
 
     const onclick = () => {
-        console.log('click')
         history.push({
             pathname: '/userprofile',
             state: props.data
